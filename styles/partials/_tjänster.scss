@@ -1,0 +1,176 @@
+main.tjMain {
+    @include flex;
+    width: 100%;
+    min-width: 290px;
+    background: $primaryColor6;
+
+    div.tjInfo {
+        max-width: 90%;
+
+        p {
+            @include paraStyling;
+            font-weight: 600;
+            text-align: center;
+            margin: 15px;
+        }
+    }
+
+    section.products {
+        @include flex($wrap: wrap);
+        padding-top: 30px;
+
+        article.tjArticle {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: $primaryColor4;
+            border: 3px solid $primaryColor3;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 20px;
+
+            img {
+                border: 2px solid $primaryColor3;
+                height: 80px;
+            }
+
+            h3 {
+                font-family: $fontRubrik;
+                padding: 10px 0;
+            }
+
+            p {
+                @include paraStyling;
+                padding-bottom: 20px;
+            }
+
+            div.divText {
+                @include flex($direction: row, $justify: space-between, $align: flex-start);
+
+                p {
+                    font-family: $font;
+                    font-weight: 900;
+                }
+
+                button[type=submit] {
+                    font-family: $font;
+                    font-size: 1rem;
+                    font-weight: 900;
+                    color: $primaryColor3;
+                    background: $primaryColor1;
+                    border: 2px solid $primaryColor3;
+                    border-radius: 10px;
+                    height: 30px;
+                    width: 60px;
+                    @include flex;
+                    text-decoration: none;
+                }
+
+                button[type=submit]:hover {
+                    background-color: $primaryColor3;
+                    color: $primaryColor1;
+                }
+
+                button[type=submit]:active {
+                    border: 2px solid white;
+                }
+            }
+        }
+    }
+
+    h2 {
+        @include h2StylingMobile;
+        margin-top: 50px;
+    }
+
+    section.tillägg {
+        min-width: 80%;
+        margin-bottom: 50px;
+
+        div.product {
+            @include flex($direction: row, $justify: space-between, $align: flex-end);
+            min-width: 240px;
+            min-height: 70px;
+            margin: 20px;
+            color: $primaryColor3;
+            border-bottom: 2px solid $primaryColor3;
+
+            h3 {
+                min-width: 60%;
+                padding-left: 10px;
+                font-family: $font;
+                font-size: 1.4rem;
+                font-weight: 900;
+            }
+
+            button[type=submit] {
+                min-width: 25%;
+                background: $primaryColor1;
+                border-radius: 10px;
+                height: 35px;
+                font-family: $font;
+                font-size: 1rem;
+                font-weight: 900;
+            }
+
+            button[type=submit]:hover {
+                background-color: $primaryColor3;
+                color: $primaryColor1;
+            }
+
+            button[type=submit]:active {
+                border: 2px solid white;
+            }
+        }
+    }
+}
+
+@media (min-width:680px) {
+    main.tjMain {
+        div.tjInfo {
+            max-width: 60%;
+
+            p {
+                font-size: $fontParaDesk;
+                font-weight: 900;
+            }
+        }
+
+        section.products {
+            flex-direction: row;
+
+            article.tjArticle {
+                max-width: 300px;
+                min-height: 500px;
+                justify-content: center;
+
+                img {
+                    height: 200px;
+                    width: 200px;
+                }
+
+                p {
+                    font-size: $fontParaDesk;
+                }
+
+                div.tjDiv {
+                    @include flex($justify: space-around, $align: stretch);
+
+                    h3 {
+                        padding-bottom: 10px;
+                        font-size: 1.4rem;
+                    }
+                }
+
+            }
+        }
+
+        h2 {
+            font-size: $fontSizeH2Desk;
+        }
+
+        section.tillägg {
+            min-width: 40%;
+        }
+
+    }
+}

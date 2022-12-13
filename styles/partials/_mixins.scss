@@ -1,0 +1,227 @@
+@import 'variables';
+
+@mixin flex($direction: column,
+    $justify: center,
+    $align: center,
+    $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+
+@mixin h2StylingMobile {
+    font-family: $fontRubrik;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+@mixin paraStyling {
+    font-family: $font;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+@mixin headerMobile {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    header {
+        display: flex;
+        justify-content: center;
+        min-height: 100px;
+        min-width: 290px;
+        background-color: $primaryColor1;
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+        margin-top: 0;
+        border-bottom: 2px solid $primaryColor3;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            min-height: 200px;
+            max-width: 290px;
+
+            .logoAndName {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h1 {
+                    font-family: $fontRubrik;
+                    color: $primaryColor2;
+                    text-align: center;
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                max-width: 100%;
+
+                li {
+                    list-style-type: none;
+                    font-family: $font;
+                    letter-spacing: 2px;
+                    padding: 5px;
+                    font-weight: 900;
+                    font-size: 1.2rem;
+
+                    a {
+                        color: $primaryColor2;
+                        text-decoration: none;
+
+                    }
+
+                    a:hover {
+                        background: $primaryColor2;
+                        color: $primaryColor1;
+                        font-weight: 900;
+                    }
+
+                    a.underline {
+                        text-decoration: underline;
+                        text-decoration-color: $primaryColor2;
+                    }
+
+                }
+
+            }
+        }
+    }
+}
+
+@mixin footerMobile {
+    footer {
+        border-top: 1px solid $primaryColor3;
+        min-height: 120px;
+        min-width: 290px;
+        margin-top: auto;
+
+        .container {
+            background: $primaryColor2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0px;
+
+            div {
+                min-width: 290px;
+                max-width: 900px;
+                min-height: 59px;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+
+                li {
+                    list-style-type: none;
+                    font-family: $font;
+                    letter-spacing: 1px;
+                    padding: 10px;
+                    font-weight: 400;
+                    font-size: 1rem;
+
+                    a:link {
+                        text-decoration: none;
+                        color: $primaryColor1;
+
+                    }
+
+                    a:visited {
+                        color: $primaryColor1;
+                    }
+
+                    a:hover {
+                        background: $primaryColor1;
+                        color: $primaryColor2;
+                        font-weight: 900;
+                    }
+                }
+            }
+
+            p {
+                font-family: $font;
+                color: $primaryColor1;
+            }
+        }
+    }
+
+}
+
+@mixin headerDesktop {
+    header {
+        .container {
+            max-width: 90vw;
+            padding: 0px 0px;
+            min-width: 90%;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+
+
+            .logoAndName {
+                justify-content: center;
+                padding-top: 10px;
+
+                h1 {
+                    font-family: $fontRubrik;
+                    font-size: 4rem;
+                }
+            }
+
+            nav {
+                ul {
+                    padding-top: 40px;
+                    padding-bottom: 40px;
+
+                    li {
+                        letter-spacing: 5px;
+                        padding: 5px;
+                        font-weight: 900;
+                        font-size: 1rem;
+                    }
+
+                    a {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+@mixin footerDesktop {
+    footer {
+        .container div:first-of-type {
+            min-width: 100%;
+
+            ul {
+                padding-top: 20px;
+
+                li {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
